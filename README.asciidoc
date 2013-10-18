@@ -1,0 +1,5 @@
+= Gradle wrapper for Minecraft Server
+
+To launch a Minecraft server:
+
+ ./gradlew runServer
