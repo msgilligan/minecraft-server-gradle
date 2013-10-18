@@ -1,0 +1,38 @@
+import de.undercouch.gradle.tasks.download.Download
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'de.undercouch:gradle-download-task:0.2'
+    }
+}
+
+def mcServerVersion = "1.6.4"
+
+def mcServerFileName = "minecraft_server.${mcServerVersion}.jar"
+def mcServerJarUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/${mcServerVersion}/${mcServerFileName}"
+def serverDir = "server"
+def binDir = "${serverDir}/bin"
+
+task makeDirs << {
+    file(binDir).mkdirs()
+}
+
+task downloadMinecraftServerJar(type: Download, dependsOn: makeDirs) {
+    src mcServerJarUrl.toString()
+    dest binDir.toString()
+    onlyIfNewer true
+}
+
+task runServer << {
+    javaexec {  main="-jar"
+                workingDir = serverDir
+                args new File("bin", mcServerFileName.toString())
+    } 
+}
+runServer.dependsOn downloadMinecraftServerJar
+
+
