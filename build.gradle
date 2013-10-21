@@ -30,7 +30,9 @@ task downloadMinecraftServerJar(type: Download, dependsOn: makeDirs) {
 task runServer << {
     javaexec {  main="-jar"
                 workingDir = serverDir
-                args new File("bin", mcServerFileName.toString())
+                minHeapSize = "512M"
+                maxHeapSize = "2G"
+                args new File("bin", mcServerFileName.toString()), "nogui"
     } 
 }
 runServer.dependsOn downloadMinecraftServerJar
