@@ -1,5 +1,28 @@
 = Gradle wrapper for Minecraft Server
 
-To launch a Minecraft server:
+== To launch a Minecraft server:
 
  ./gradlew runServer
+
+== Configuration
+
+Edit +build.gradle+ and look for the following lines.  To set the Minecraft server version:
+
+ def mcServerVersion = "1.6.4"
+
+To change the initial or maximum Java heap sise:
+
+            minHeapSize = "512M"
+            maxHeapSize = "2G"
+
+Or to enable GUI mode, find the following line:
+
+            args new File("bin", mcServerFileName.toString()), "nogui"
+
+Remove the second argument, starting with the commma: +, "nogui"+
+
+== TO DO
+
+* Download Minecraft jar and publish to local Maven repo for maximum flexibility
+* Use Gradle app plugin for running, packaging, etc.
+
