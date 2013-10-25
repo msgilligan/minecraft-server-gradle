@@ -10,7 +10,7 @@ buildscript {
     }
 }
 
-def mcServerVersion = "1.6.4"
+def mcServerVersion = "1.7.2"
 def mcServerHideGUI = true
 
 def mcServerFileName = "minecraft_server.${mcServerVersion}.jar"
