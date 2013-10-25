@@ -11,6 +11,7 @@ buildscript {
 }
 
 def mcServerVersion = "1.6.4"
+def mcServerHideGUI = true
 
 def mcServerFileName = "minecraft_server.${mcServerVersion}.jar"
 def mcServerJarUrl = "https://s3.amazonaws.com/Minecraft.Download/versions/${mcServerVersion}/${mcServerFileName}"
@@ -28,11 +29,15 @@ task downloadMinecraftServerJar(type: Download, dependsOn: makeDirs) {
 }
 
 task runServer << {
+    def serverArgs = [new File("bin", mcServerFileName.toString())]
+    if (mcServerHideGUI) {
+        serverArgs.add("nogui")
+    }
     javaexec {  main="-jar"
                 workingDir = serverDir
                 minHeapSize = "512M"
                 maxHeapSize = "2G"
-                args new File("bin", mcServerFileName.toString()), "nogui"
+                args serverArgs
     } 
 }
 runServer.dependsOn downloadMinecraftServerJar
