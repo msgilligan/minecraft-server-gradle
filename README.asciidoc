@@ -6,20 +6,18 @@
 
 == Configuration
 
-Edit +build.gradle+ and look for the following lines.  To set the Minecraft server version:
+Edit +build.gradle+ and look for the following lines.  To change the Minecraft server version:
 
- def mcServerVersion = "1.6.4"
+ def mcServerVersion = "1.7.2"
 
 To change the initial or maximum Java heap sise:
 
             minHeapSize = "512M"
             maxHeapSize = "2G"
 
-Or to enable GUI mode, find the following line:
+Or to enable GUI mode, change +true+ to +false+ in the following line:
 
-            args new File("bin", mcServerFileName.toString()), "nogui"
-
-Remove the second argument, starting with the commma: +, "nogui"+
+            def mcServerHideGUI = true
 
 == TO DO
 
