@@ -24,3 +24,9 @@ Or to enable GUI mode, change +true+ to +false+ in the following line:
 * Download Minecraft jar and publish to local Maven repo for maximum flexibility
 * Use Gradle app plugin for running, packaging, etc.
 
+== Other Gradle & Minecraft projects
+
+=== ForgeGradle
+
+According to an Minecraft Forge forum post entitled http://www.minecraftforge.net/forum/index.php/topic,13353.msg68831.html[Minecraft 1.7 - News] work has begun on a "new, more streamlined build process" for modders that will be use Gradle.  That work is in the https://github.com/MinecraftForge/ForgeGradle[ForgeGradle] project on Github.
+
