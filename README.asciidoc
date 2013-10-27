@@ -21,7 +21,7 @@ Or to enable GUI mode, change +true+ to +false+ in the following line:
 
 == TO DO
 
-* Download Minecraft jar and publish to local Maven repo for maximum flexibility
+* Download Minecraft jar and publish to local Maven repo for maximum flexibility.  It looks like the https://github.com/mctechnologic/mcforge-maven-plugin/wiki/mcforge:install[MCForge Maven Plugin] does this (or something similar.)
 * Use Gradle app plugin for running, packaging, etc.
 
 == Other Gradle & Minecraft projects
