@@ -1,5 +1,19 @@
 = Gradle wrapper for Minecraft Server
 
+The Goal of this project is to create useful Gradle tools for downloading, building, and installing a Minecraft server (with or without modifications.)  The initial effort is for Minecraft Server version 1.7.2 and later, but since MCP isn't ready for 1.7.x yet, I may start tinkering with 1.6.x as well.  It would also be nice to do the same thing with the client.
+
+The goals are:
+
+* Capabililty to downlaod official Minecraft jars and store in local Maven repository.
+* Script to build a working Minecraft server application directory
+** Application Launching shell scripts
+** Mac OS X .app format and .dmg container
+** Windows .EXE format (I'll need a Windows dev to help out here)
+** Server as a daemon for Mac OS X and Linux
+** Windows deamon server (if Windows volunteer)
+
+The first step is to write POMs and install scripts for putting the downlaoded jars in a local Maven repo.  The next step is to use existing Gradle plugins for building the apps.
+
 == To launch a Minecraft server:
 
  ./gradlew runServer
@@ -29,4 +43,8 @@ Or to enable GUI mode, change +true+ to +false+ in the following line:
 === ForgeGradle
 
 According to an Minecraft Forge forum post entitled http://www.minecraftforge.net/forum/index.php/topic,13353.msg68831.html[Minecraft 1.7 - News] work has begun on a "new, more streamlined build process" for modders that will be use Gradle.  That work is in the https://github.com/MinecraftForge/ForgeGradle[ForgeGradle] project on Github.
+
+=== Minecraft Modding Wiki Page
+
+I've created a https://github.com/msgilligan/minecraft-server-gradle/wiki/Minecraft-Modding-Resources[Wiki Page] where I'm collecting links to important modding sites and resources.  It's a work-in-progress as I figure out where all the good stuff is.
 
