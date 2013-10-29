@@ -4,7 +4,7 @@ The Goal of this project is to create useful Gradle tools for downloading, build
 
 The goals are:
 
-* Capabililty to downlaod official Minecraft jars and store in local Maven repository.
+* Capabililty to download official Minecraft jars and store in local Maven repository.
 * Script to build a working Minecraft server application directory
 ** Application Launching shell scripts
 ** Mac OS X .app format and .dmg container
@@ -13,6 +13,8 @@ The goals are:
 ** Windows deamon server (if Windows volunteer)
 
 The first step is to write POMs and install scripts for putting the downlaoded jars in a local Maven repo.  The next step is to use existing Gradle plugins for building the apps.
+
+The current +build.gradle+ downloads and runs in one step which is flawed for several reasons, but it is a first step...
 
 == To launch a Minecraft server:
 
